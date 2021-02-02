@@ -18,7 +18,9 @@ docker run -tid -p 80:80 -p 443:443 ft_server
 * Wordpress is automatically setup
 
 ## Disable autoindex
+```shell
 docker run -tid -e AUTOINDEX="OFF" -p 80:80 -p 443:443
+```
 
 test : localhost/phpmyadmin/templates must display a 403 error
 
