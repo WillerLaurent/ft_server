@@ -10,11 +10,13 @@ echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost';" | mysql -u roo
 echo "FLUSH PRIVILEGES;" | mysql -u root --skip-password
 echo "update mysql.user set plugin = 'mysql_native_password' where user='root';" | mysql -u root
 
+if [ "$AUTOINDEX" = "OFF" ]
+then
+echo "autoindex"
+	chmod +w  /etc/nginx/sites-available/localhost
+	sed -i 's/autoindex on;/autoindex off;/g' /etc/nginx/sites-available/localhost
+fi
+
 service nginx start
 sleep infinity
 
-if [ "$AUTOINDEX" = "OFF" ]
-then
-	chmod +w  /etc/nginx/sites-available/default
-	sed -i 's/autoindex on;/autoindex off;/g' /etc/nginx/sites-available/localhost
-fi

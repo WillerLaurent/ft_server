@@ -1,7 +1,5 @@
 # ft_server
 
-## Final grade : 100/100
-
 ## Description
 
 ft_server is a project that asks you to run a server on Debian Buster through Docker with a Wordpress, Phpmyadmin and Mysql runnning.
@@ -20,4 +18,8 @@ docker run -tid -p 80:80 -p 443:443 ft_server
 * Wordpress is automatically setup
 
 # Disable autoindex
-docker run -e AUTOINDEX="OFF"
+docker run -tid -e AUTOINDEX="OFF" -p 80:80 -p 443:443
+
+tester : localhost/phpmyadmin/templates doit afficher une 403
+
+
