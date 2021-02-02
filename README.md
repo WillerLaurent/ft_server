@@ -17,9 +17,9 @@ docker run -tid -p 80:80 -p 443:443 ft_server
 * MySQL is automatically created
 * Wordpress is automatically setup
 
-# Disable autoindex
+## Disable autoindex
 docker run -tid -e AUTOINDEX="OFF" -p 80:80 -p 443:443
 
-tester : localhost/phpmyadmin/templates doit afficher une 403
+test : localhost/phpmyadmin/templates must display a 403 error
 
 
